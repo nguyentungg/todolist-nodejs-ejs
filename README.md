@@ -1,2 +1,2 @@
 # todolist-nodejs-ejs
-The Todo project make by NodeJS, Express, EJS
+The Todo project make by Javascript, NodeJS, Express, EJS
