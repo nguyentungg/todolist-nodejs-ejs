@@ -3,7 +3,6 @@ The Todo project make by Javascript, NodeJS, Express, EJS
 # Demo
 ![nodejs](https://user-images.githubusercontent.com/16759685/137575413-372c3645-7e7a-42a5-ba03-c8f7867cd536.gif)
 
-
 # How To Install
 - `git  clone`
 - `npm install`
