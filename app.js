@@ -19,7 +19,9 @@ app.get("/", function(req, res){
 
   res.render("list", {
     listTitle: day,
-    newListItems: items
+    newListItems: items,
+    main: "active",
+    work: ""
   });
 
 });
@@ -38,7 +40,12 @@ app.post("/", function(req, res){
 });
 
 app.get("/work", function(req, res){
-  res.render("list", {listTitle: "Work List", newListItems: workItems});
+  res.render("list", {
+    listTitle: "Work List",
+    newListItems: workItems,
+    main: "",
+    work: "active"
+  });
 });
 
 app.post("/work", function(req, res){

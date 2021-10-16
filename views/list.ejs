@@ -3,16 +3,16 @@
     <div class="box" id="heading">
       <h1><%= listTitle %></h1>
     </div>
-    <div class="box">
+    <div class="box tab">
+      <a class="<%= main %>" href="/">Main</a>
+      <a class="ml-5 <%= work %>" href="/work">Work</a>
+    </div>
+    <div class="box mt-0">
         <% newListItems.forEach(function(item){ %>
           <div class="item">
             <input type="checkbox">
               <p><%= item %></p>
           </div>
-          <!--      <% for(var i=0; i<newListItems.length; i++) { %>
-                <li><%= newListItems[i] %></li>
-              <% } %>
-          -->
         <% }); %>
         <form class="item" action="/" method="post">
           <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
