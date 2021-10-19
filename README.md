@@ -13,3 +13,4 @@ The Todo project make by Javascript, NodeJS, Express, EJS
 - Express: 4.17.1
 - body-parser: 1.19.0
 - ejs: 3.1.6
+- lodash: 4.17.21
