@@ -1,9 +1,10 @@
 # todolist-nodejs-ejs
 The Todo project make by Javascript, NodeJS, Express, EJS
 # Demo
-![nodejs](https://user-images.githubusercontent.com/16759685/137575413-372c3645-7e7a-42a5-ba03-c8f7867cd536.gif)
+![Untitled Project](https://user-images.githubusercontent.com/16759685/137996068-0a0cbb25-2113-4f52-8e13-8c4bdd929b15.gif)
 
 # How To Install
+
 - `git  clone`
 - `npm install`
 - `nodemon app.js`
