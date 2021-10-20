@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://admin-tung:Test123@cluster0.hzzjf.mongodb.net/todolistDB?retryWrites=true&w=majority", {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String
@@ -79,7 +79,7 @@ app.get("/:customListName", function(req, res){
         res.redirect("/" + customListName);
       } else {
         //Show an existing list
-        res.render("list", {listTitle: foundList.name, newListItems: foundList.items, ngay: day});
+        res.render("list", {listTitle: foundList.name, newListItems: foundList.items, listDate: day});
       }
     }
   });
@@ -145,6 +145,11 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(3000, function(){
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function(){
   console.log("Server started on port 3000");
 });
