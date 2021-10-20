@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+require('dotenv').config();
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb+srv://admin-tung:Test123@cluster0.hzzjf.mongodb.net/todolistDB?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String
@@ -106,21 +107,6 @@ app.post("/", function(req, res){
   }
 });
 
-// app.get("/work", function(req, res){
-//   res.render("list", {
-//     listTitle: "Work List",
-//     newListItems: workItems,
-//     main: "",
-//     work: "active"
-//   });
-// });
-
-// app.post("/work", function(req, res){
-//   const item = req.body.newItem;
-//   workItems.push(item);
-//   res.redirect("/");
-// });
-
 app.post("/delete", function(req, res){
   const checkedItemId = req.body.checkbox;
   const listName = req.body.listName;
@@ -145,11 +131,6 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
-
-app.listen(port, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Server started on port 3000");
 });
