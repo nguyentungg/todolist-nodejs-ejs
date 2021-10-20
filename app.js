@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb+srv://" + ${process.env.DB_USER} + ":" + ${process.env.DB_PASS} + "@cluster0.hzzjf.mongodb.net/" + ${process.env.DB_NAME} + "?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@cluster0.hzzjf.mongodb.net/" + process.env.DB_NAME + "?retryWrites=true&w=majority", {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String
